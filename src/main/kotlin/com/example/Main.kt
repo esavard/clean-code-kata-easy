@@ -13,15 +13,13 @@ object Main {
         }
     }
 
-    fun c(a : Double, b : Double, t : Int): Double {
-        if (t == 1) {
-            return a + b
-        } else if (t == 2) {
-            return a - b
-        } else if (t == 3) {
-            return a * b
-        } else {
-            return a / b
+    fun c(a: Double, b: Double, t: Int): Double {
+        return when (t) {
+            1 -> a + b
+            2 -> a - b
+            3 -> a * b
+            4 -> a / b
+            else -> { return a / b } // Default case, should not happen
         }
     }
 }
