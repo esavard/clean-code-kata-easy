@@ -5,21 +5,21 @@ package com.example
 object Main {
     @JvmStatic
     fun main(args: Array<String>) {
-        val a = 2.0
-        val b = 3.0
+        val firstNumber = 2.0
+        val secondNumber = 3.0
 
-        for (i in 1..4) {
-            println("operation $i: $a $b = " + c(a, b, i))
+        for (operation in OperationType.entries) {
+            println("operation: $firstNumber ${operation.getSymbol()} $secondNumber = " + performOperation(firstNumber, secondNumber, operation))
         }
     }
 
-    fun c(a: Double, b: Double, t: Int): Double {
-        return when (t) {
-            1 -> a + b
-            2 -> a - b
-            3 -> a * b
-            4 -> a / b
-            else -> { return a / b } // Default case, should not happen
+    fun performOperation(firstNumber : Double, secondNumber : Double, operationType : Enum<OperationType>) : Double {
+        return when (operationType) {
+            OperationType.ADDITION -> firstNumber + secondNumber
+            OperationType.SUBTRACTION -> firstNumber - secondNumber
+            OperationType.MULTIPLICATION -> firstNumber * secondNumber
+            OperationType.DIVISION -> firstNumber / secondNumber
+            else -> throw IllegalArgumentException("Invalid operation type: $operationType")
         }
     }
 }
