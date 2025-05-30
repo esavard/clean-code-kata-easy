@@ -3,11 +3,11 @@ Easy code kata to practice clean coding.
 
 ## Proposed exercises (to be done in 15–30 min)
 
-1. Add a first unit test for function “c” in its initial “dirty” state
-2. Propose clear names and a clear signature
-3. Identify multiple responsibilities
-4. Handle exceptions (division by 0)
-5. Refactor (for example: add an enum, one operation per unit test SRP)
+1. Add a first unit test for function “c” in its initial “dirty” state (put a "safety net" over legacy code)
+2. Propose meaningful variable, function and signature names
+3. Identify multiple responsibilities, and break them in simpler pieces
+4. Handle edge cases (such as division by 0)
+5. Refactor more (for example: add an enum, split unit tests so each test cover only one operation, etc.)
 6. Bonus: Use the Strategy and Factory design patterns to make the code easier to maintain
 
 **Tips:**
